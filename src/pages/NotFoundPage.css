@@ -1,0 +1,15 @@
+.message-body {
+    max-width: 1100px;
+    padding-left: 5px;
+    padding-right: 30px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    margin-left: 25px;
+    margin-right: auto;
+}
+
+.message {
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 18px;
+}
