@@ -25,6 +25,15 @@
   }
 }
 
+.header-text {
+  color: white;
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
 .header .header-link {
   display: inline-block;
   padding: 6px 9.5px;

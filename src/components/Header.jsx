@@ -1,31 +1,51 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate, useSearchParams } from "react-router";
+import { Theme } from "./Theme";
+import { useState } from "react";
 import "./Header.css";
 
 export function Header({ cart }) {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  
   let totalQuantity = 0;
-
+  const searchTexts = searchParams.get('search');
+  
+  const [search, setSearch] = useState(searchTexts || '');
+  
   cart.forEach((cartItem) => {
     totalQuantity += cartItem.quantity;
   })
+
+  const searchText = function(event) {
+    setSearch(event.target.value);
+  }
+
+  const searchItem = function() {
+    navigate(`/?search=${search}`)
+  }
 
   return (
     <div className="header">
       <div className="left-section">
         <NavLink to="/" className="header-link">
-          <img className="logo" src="images/logo-white.png" />
-          <img className="mobile-logo" src="images/mobile-logo-white.png" />
+          {/* <img className="logo" src="images/logo-white.png" />
+          <img className="mobile-logo" src="images/mobile-logo-white.png" /> */}
+          <div className="header-text">MyKart</div>
         </NavLink>
       </div>
 
       <div className="middle-section">
-        <input className="search-bar" type="text" placeholder="Search" />
+        <input className="search-bar" type="text" onChange={searchText} placeholder="Search" />
 
-        <button className="search-button">
+        <button className="search-button" onClick={searchItem}>
           <img className="search-icon" src="images/icons/search-icon.png" />
         </button>
       </div>
 
+
+        <Theme />
       <div className="right-section">
+
         <NavLink className="orders-link header-link" to="/orders">
           <span className="orders-text">Orders</span>
         </NavLink>

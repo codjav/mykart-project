@@ -102,3 +102,23 @@ select {
 select:focus, input:focus {
   outline: 2px solid rgb(25, 135, 84);
 }
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #f6f6f6;
+  --primary: #ff9900;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #e5e7eb;
+  --card-bg: #1e293b;
+  --primary: #fbbf24;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
