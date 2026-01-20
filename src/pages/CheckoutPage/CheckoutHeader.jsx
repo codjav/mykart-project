@@ -1,4 +1,5 @@
 import { Link } from "react-router"
+import { Theme } from "../../components/Theme"
 import "./CheckoutHeader.css"
 
 export function CheckoutHeader() {
@@ -20,6 +21,8 @@ export function CheckoutHeader() {
             </Link>
             )
           </div>
+
+          <Theme />
 
           <div className="checkout-header-right-section">
             <img src="images/icons/checkout-lock-icon.png" />
