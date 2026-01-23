@@ -1,0 +1,1 @@
+This project is divide into two part frontend and backend and each part is furtherly divided into components to make the project more comprehensive and easy and i have use react, node js and some use of ai for making this project.
